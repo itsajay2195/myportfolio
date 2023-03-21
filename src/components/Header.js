@@ -2,12 +2,12 @@ import React,{useState} from 'react'
 import styled from 'styled-components'
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
-import {selectCars} from '../features/car/carSlice'
+// import {selectCars} from '../features/car/carSlice'
 import {useSelector} from 'react-redux'
 
 function Header() {
   const [open, setOpen] = useState(false)
-  const cars = useSelector(selectCars)
+  const cars = ["Model S","Model X","Model 3","Model Y"]
 
 
   return (
@@ -21,8 +21,6 @@ function Header() {
         </Menu>
 
         <RightMenu>
-            <a href="#">Shop </a>
-            <a href="#">Tesla Account</a>
             <CustomMenu onClick={()=>{setOpen(true)}}></CustomMenu>
         </RightMenu>
 
