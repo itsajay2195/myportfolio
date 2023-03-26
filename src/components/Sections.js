@@ -1,36 +1,49 @@
 import React, { useEffect, useRef } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Fade from "react-reveal/Fade";
-import lottie from 'lottie-web';
+
 import DeveloperLottie from "./Lottie/DeveloperLottie";
-import { init } from 'ityped'
+import { init } from "ityped";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub,faLinkedin,faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 function Section(props) {
-  const textRef  = useRef()
-
-  useEffect(() => {
-    init(textRef.current, {
-      strings: ['React', 'TypeScript', 'JavaScript'],
-      typeSpeed: 100,
-      backSpeed: 50,
-      startDelay: 500,
-      backDelay: 500,
-      loop: true,
-      showCursor: false // set showCursor option to false
-    });
-  }, []);
+  const textRef = useRef();
 
   return (
-    <Wrap>
+    <Wrap className="Home">
       <Left>
-      <span ref={textRef}></span>
+          <div
+            style={{
+              display:"flex",
+              justifyContent:"center"
+            }}
+          >
+            <MyImg src={"/images/Ajay.jpeg"} alt="My Image" />
+          </div>
+      
+        <div style={{display:"flex", flexDirection:"column" , margin:40, borderWidth:"10px", borderColor:"red",height:"20vh"}}>
+        <Text>Hey! I Am</Text>
+        <Name>Ajaykumar Rajasekaran</Name>
+        <span style={{marginTop:10,color:"white"}}> An India based Software developer passionate and experienced in developing mobile applications using <Name style={{fontSize:"14px"}}> React Native</Name>.</span>
+        </div>
+        
+        <div style={{dispaly:"flex", flexDirection:"column",margin:40}}>
+          <span style={{fontWeight:"bold",}}>Follow Me:</span>
+          <div style={{dispaly:"flex", marginTop:10,justifyContent:'space-around'}}>
+          <FontAwesomeIcon icon={faGithub} style={{paddingRight:20}} size="2x" />
+          <FontAwesomeIcon icon={faLinkedin} style={{paddingRight:20}} size="2x" />
+          <FontAwesomeIcon icon={faInstagram} style={{paddingRight:20}} size="2x" />
+          </div>
+        </div>
+        
       </Left>
 
-      <Center>
-        <div style={{height:"150px", width:"150px", borderRadius:100, backgroundColor:"red"}}> hi</div>
-      </Center>
+      {/* <Center>
+        <MyImg src={"/images/Ajay.jpeg"} alt="My Image" />
+      </Center> */}
       <Right>
-      <DeveloperLottie animationPath={"/lottie/dev.json"} />
+        <DeveloperLottie animationPath={"/lottie/dev.json"} />
       </Right>
 
       <div
@@ -62,7 +75,6 @@ function Section(props) {
   );
 }
 
-
 export default Section;
 
 const Wrap = styled.div`
@@ -72,11 +84,11 @@ const Wrap = styled.div`
 
 const Left = styled.div`
   width: 100vh;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
+  height: 90vh;
+  margin-top:140px;
+  padding: 0px 40px;
+  display:flex;
+  flex-direction:column;
 `;
 const Right = styled.div`
   display: flex;
@@ -84,18 +96,19 @@ const Right = styled.div`
   width: 100vh;
   justify-content: center;
   align-items: center;
-  padding: 60px; 
+  padding: 60px;
 `;
 
-const AnimationContainer = styled.div`
-  width: 500px;
-  height: 500px;
-`;
+const MyImg = styled.img`
+  height:150px;
+  width;150px;
+  border-radius:100px;
 
+`;
 
 const Center = styled.div`
   position: absolute;
-  height:50vh;
+  height: 50vh;
   display: flex;
   top: 0;
   left: 0;
@@ -144,6 +157,40 @@ const DownArrow = styled.img`
   animation: animateDown 1s infinite;
   overflow-x: hidden;
 `;
+
+const typing = keyframes`
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+`;
+
+const Text = styled.span`
+font-family: "Montserrat", sans-serif;
+font-size: 44px;
+font-weight:bold;
+color:white
+`;
+
+const Name = styled.span`
+  font-family: "Montserrat", sans-serif;
+  font-size: 44px;
+  font-weight:bold;
+  flex-wrap: nowrap;
+  background-image: linear-gradient(
+    to right,
+    #6371c7,
+    #5563c1,
+    #4656bb,
+    #3848b5,
+    #2a3bae
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
+
 const Buttons = styled.div``;
 //vw full viEw width
 //
