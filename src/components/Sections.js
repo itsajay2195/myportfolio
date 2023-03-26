@@ -1,99 +1,149 @@
-import React from 'react'
-import styled from 'styled-components'
-import Fade from 'react-reveal/Fade';
+import React, { useEffect, useRef } from "react";
+import styled from "styled-components";
+import Fade from "react-reveal/Fade";
+import lottie from 'lottie-web';
+import DeveloperLottie from "./Lottie/DeveloperLottie";
+import { init } from 'ityped'
 
 function Section(props) {
-    return (
-        <Wrap bgImage={props.backgroundImg}>
-            <Fade bottom>
-                <ItemText>
-                    <h1>{props.title}</h1>
-                    <p>{props.description}</p>
-                </ItemText>
+  const textRef  = useRef()
 
-            </Fade>
+  useEffect(() => {
+    init(textRef.current, {
+      strings: ['React', 'TypeScript', 'JavaScript'],
+      typeSpeed: 100,
+      backSpeed: 50,
+      startDelay: 500,
+      backDelay: 500,
+      loop: true,
+      showCursor: false // set showCursor option to false
+    });
+  }, []);
 
-            <Buttons>
-                <Fade bottom>
-                    <ButtonGroup>
-                        <LeftButton>
-                            {props.leftBtnText}
-                        </LeftButton>
+  return (
+    <Wrap>
+      <Left>
+      <span ref={textRef}></span>
+      </Left>
 
-                        {props.rightBtnText &&
-                            <RightButton>
-                                {props.rightBtnText}
-                            </RightButton>}
-                    </ButtonGroup>
-                </Fade>
-              
+      <Center>
+        <div style={{height:"150px", width:"150px", borderRadius:100, backgroundColor:"red"}}> hi</div>
+      </Center>
+      <Right>
+      <DeveloperLottie animationPath={"/lottie/dev.json"} />
+      </Right>
 
-                <DownArrow src="images/down-arrow.svg"></DownArrow>
-            </Buttons>
+      <div
+        style={{
+          position: "absolute",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+          alignItems: "center",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+        }}
+      >
+        <Fade bottom>
+          <ButtonGroup>
+            <LeftButton>{props.leftBtnText}</LeftButton>
 
-        </Wrap>
-    )
+            {props.rightBtnText && (
+              <RightButton>{props.rightBtnText}</RightButton>
+            )}
+          </ButtonGroup>
+        </Fade>
+
+        <DownArrow src="images/down-arrow.svg"></DownArrow>
+      </div>
+    </Wrap>
+  );
 }
 
-export default Section
+
+export default Section;
 
 const Wrap = styled.div`
-    height: 100vh;
-    width: 100vw; 
-    background-size : cover;
-    background-position: center;
-    background-repeat:not-repeat;
-    background-image :url('/images/model-s.jpg');
-    display: flex;
-    flex-direction:column;
-    justify-content: space-between; //vertical
-    align-items: center; //horizontal
-    background-image :${props => `url("/images/${props.bgImage}")`}
-  
-    
-`
+  display: flex;
+  background-color: black;
+`;
+
+const Left = styled.div`
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+`;
+const Right = styled.div`
+  display: flex;
+  height: 100vh;
+  width: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 60px; 
+`;
+
+const AnimationContainer = styled.div`
+  width: 500px;
+  height: 500px;
+`;
+
+
+const Center = styled.div`
+  position: absolute;
+  height:50vh;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+`;
 
 const ItemText = styled.div`
-   padding:15vh;
-   text-align:center; 
-   z-index:-1;
-`
+  padding: 15vh;
+  text-align: center;
+  z-index: -1;
+`;
 const ButtonGroup = styled.div`
   display: flex;
-  margin-bottom:30px;
-  @media(max-width:768px){
-      flex-direction:column
+  margin-bottom: 30px;
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
-`
+`;
 
-const LeftButton = styled.div` 
-   background-color:rgba(23,26,32,0.8);
-   height: 40px;
-   width: 250px;
-   color:white;
-   display:flex;
-   justify-content:center;
-   align-items:center;
-   border-radius:100px;
-   opacity:0.85;
-   text-transform: uppercase;
-   font-size:12px;
-   cursor:pointer;
-   margin:8px
-`
+const LeftButton = styled.div`
+  background-color: rgba(23, 26, 32, 0.8);
+  height: 40px;
+  width: 250px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  opacity: 0.85;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 8px;
+`;
 const RightButton = styled(LeftButton)`
-    background:white;
-    opacity:0.65;
-    color:black;
-`
+  background: white;
+  opacity: 0.65;
+  color: black;
+`;
 
-const DownArrow = styled.img` 
-   height:40px;
-   animation: animateDown 1s infinite;
-   overflow-x:hidden ;
-   `
-const Buttons = styled.div` 
-    
-   `
+const DownArrow = styled.img`
+  height: 40px;
+  animation: animateDown 1s infinite;
+  overflow-x: hidden;
+`;
+const Buttons = styled.div``;
 //vw full viEw width
 //
