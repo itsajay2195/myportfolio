@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Fade from "react-reveal/Fade";
+import Slide from 'react-reveal/Slide';
 
 const icons = [
   {
@@ -48,16 +48,15 @@ function Skills() {
       <Content>
         {icons.map((icon) => (
           <IconWrapper key={icon.key}>
-            <Fade>
+            <Slide left>
               <MyImg src={icon.imgurl} alt={icon.name} />
               <span style={{ paddingTop: 20 }}>
                 <Name>{icon.name}</Name>
               </span>
-            </Fade>
+            </Slide>
           </IconWrapper>
         ))}
       </Content>
-      <div></div>
       <DownArrow src="images/down-arrow.svg"></DownArrow>
     </Container>
   );
