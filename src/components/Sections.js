@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import Fade from "react-reveal/Fade";
-
 import DeveloperLottie from "./Lottie/DeveloperLottie";
-import { init } from "ityped";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub,faLinkedin,faInstagram } from '@fortawesome/free-brands-svg-icons';
 
@@ -106,23 +104,6 @@ const MyImg = styled.img`
 
 `;
 
-const Center = styled.div`
-  position: absolute;
-  height: 50vh;
-  display: flex;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ItemText = styled.div`
-  padding: 15vh;
-  text-align: center;
-  z-index: -1;
-`;
 const ButtonGroup = styled.div`
   display: flex;
   margin-bottom: 30px;
@@ -156,15 +137,6 @@ const DownArrow = styled.img`
   height: 40px;
   animation: animateDown 1s infinite;
   overflow-x: hidden;
-`;
-
-const typing = keyframes`
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
 `;
 
 const Text = styled.span`
