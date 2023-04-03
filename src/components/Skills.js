@@ -31,9 +31,9 @@ const icons = [
   // add more icons here
 ];
 
-function Skills() {
+function Skills({skillsRef}) {
   return (
-    <Container>
+    <Container id="skills">
       <div
         style={{
            marginTop:50, 

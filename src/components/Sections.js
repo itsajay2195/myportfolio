@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import DeveloperLottie from "./Lottie/DeveloperLottie";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -57,7 +57,7 @@ function Section(props) {
           bottom: 0,
         }}
       >
-        <Fade bottom>
+        {/* <Fade bottom>
           <ButtonGroup>
             <LeftButton>{props.leftBtnText}</LeftButton>
 
@@ -65,7 +65,7 @@ function Section(props) {
               <RightButton>{props.rightBtnText}</RightButton>
             )}
           </ButtonGroup>
-        </Fade>
+        </Fade> */}
 
         <DownArrow src="images/down-arrow.svg"></DownArrow>
       </div>

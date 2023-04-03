@@ -5,7 +5,7 @@ import Slide from "react-reveal/Slide";
 
 // `;
 
-const Projects = () => {
+const Projects = ({projectsRef}) => {
   const [portfolioData, setPortfolioData] = useState(mobileProtfolio);
 
   const handleArrowClick = () => {
@@ -17,7 +17,7 @@ const Projects = () => {
   };
 
   return (
-    <Container>
+    <Container id="projects" >
       <div
         style={{
           marginTop: 50,

@@ -4,7 +4,7 @@ import Section from "./Sections";
 
 function Home() {
   return (
-    <Container>
+    <Container id="home">
       <Section
         title="I'm Ajay, working as a React Native Developer. 
         I love to work on products whose impact makes life easier"

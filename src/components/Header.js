@@ -5,10 +5,17 @@ import CloseIcon from "@material-ui/icons/Close";
 // import {selectCars} from '../features/car/carSlice'
 import { useSelector } from "react-redux";
 
-function Header() {
+function Header({ activeComponent, handleLinkClick }) {
   const [open, setOpen] = useState(false);
-  const cars = ["Home", "About", "Projects","Contact me"];
+  const sections = ["Home", "Skills", "Projects", "Contact"];
 
+  const handleProjectsClick = (event,name) => {
+    event.preventDefault();
+    const projectsSection = document.getElementById(name);
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <Container>
       <Name>
@@ -16,10 +23,15 @@ function Header() {
       </Name>
 
       <Menu>
-        {cars &&
-          cars.map((car, index) => (
-            <a key={index} href="#">
-              {car}
+        {sections &&
+          sections.map((section, index) => (
+            <a
+              key={index}
+              href={`#${section.toLowerCase()}`}
+              onClick={(event)=>handleProjectsClick(event, section.toLowerCase())}
+              // className={activeComponent === car ? "active" : ""}
+            >
+              {section}
             </a>
           ))}
       </Menu>
@@ -29,7 +41,7 @@ function Header() {
           onClick={() => {
             setOpen(true);
           }}
-        ></CustomMenu>
+        />
       </RightMenu>
 
       <BurgerNav show={open}>
@@ -40,10 +52,19 @@ function Header() {
             }}
           />
         </CloseWrapper>
-        {cars &&
-          cars.map((car, index) => (
+        {sections &&
+          sections.map((section, index) => (
             <li key={index}>
-              <a href="#">{car}</a>
+              <a
+                href="#"
+                onClick={() => {
+                  handleLinkClick(section);
+
+                  setOpen(false);
+                }}
+              >
+                {section}
+              </a>
             </li>
           ))}
       </BurgerNav>
@@ -63,7 +84,6 @@ const Container = styled.div`
   width: 100%;
   z-index: 1;
   background: black;
-  
 `;
 
 const Name = styled.div`
@@ -75,9 +95,16 @@ const Name = styled.div`
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     padding: 0 10px;
-    font-size: 24px; 
+    font-size: 24px;
     flex-wrap: nowrap;
-    background-image: linear-gradient(to right, #6371c7, #5563c1, #4656bb, #3848b5, #2a3bae);
+    background-image: linear-gradient(
+      to right,
+      #6371c7,
+      #5563c1,
+      #4656bb,
+      #3848b5,
+      #2a3bae
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -91,7 +118,7 @@ const Menu = styled.div`
 
   a {
     font-weight: 600;
-    font-size: 14px; 
+    font-size: 14px;
     padding: 0 10px;
     flex-wrap: nowrap;
   }
