@@ -1,31 +1,28 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const Contact = ({contactRef}) => {
+const Contact = ({ contactRef }) => {
   const [message, setMessage] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     setMessage(true);
   };
-  
+
   return (
-    <Container
-      id="contact"
-      ref={contactRef}
-    >
-      <Content >
+    <Container id="contact" ref={contactRef}>
+      <Content>
         <Left>
           <img src="images/shake.svg" alt="" />
         </Left>
         <Right>
-          <form onSubmit={handleSubmit}>
+          <form action="https://formspree.io/f/moqzkoep" method="POST">
             <FormGroup>
               <Label>Email:</Label>
-              <Input type="text" placeholder="Enter your email" />
+              <Input  name="email" type="text" placeholder="Enter your email" />
             </FormGroup>
             <FormGroup>
               <Label>Message:</Label>
-              <Textarea placeholder="Enter your message" />
+              <Textarea  name="message" placeholder="Enter your message" />
             </FormGroup>
             <Button type="submit">Send</Button>
             {message && (
@@ -45,7 +42,7 @@ const Container = styled.div`
   background-color: black;
   display: flex;
   flex-direction: column;
-  padding-top:50px;
+  padding-top: 50px;
 `;
 
 const Content = styled.div`

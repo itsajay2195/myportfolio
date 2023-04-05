@@ -5,7 +5,7 @@ import CloseIcon from "@material-ui/icons/Close";
 // import {selectCars} from '../features/car/carSlice'
 import { useSelector } from "react-redux";
 
-function Header({ activeSection, handleSetActiveComponent }) {
+function Header({ activeSection, handleSetActiveComponent,handleResumeClick }) {
   const [open, setOpen] = useState(false);
   const sections = ["Home", "Skills", "Projects", "Contact", "Resume"];
 
@@ -40,9 +40,12 @@ function Header({ activeSection, handleSetActiveComponent }) {
           
               key={index}
               href={`#${section.toLowerCase()}`}
-              onClick={(event) =>
+              onClick={(event) =>{
+                if(section === "Resume"){
+                  handleResumeClick(true)
+                }
                 handleProjectsClick(event, section.toLowerCase())
-              }
+              }}
             >
               {section}
             </a>
