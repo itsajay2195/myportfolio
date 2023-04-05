@@ -16,7 +16,6 @@ function App() {
     setActiveSection(name);
   };
 
-  const [showResume, setShowResume] = React.useState(false);
 
   const handleResumeClick = () => {
     window.open(
@@ -60,9 +59,8 @@ function App() {
       ) {
         setActiveSection("projects");
       } else if (
-        contactRect &&
-        contactRect.top >= 0 &&
-        contactRect.bottom <= window.innerHeight
+        contactRect&&
+        projectsRect.bottom < window.innerHeight
       ) {
         console.log("handleScroll called4");
         setActiveSection("contact");
