@@ -27,11 +27,11 @@ function Section(props) {
         </div>
         
         <div style={{dispaly:"flex", flexDirection:"column",margin:40}}>
-          <span style={{fontWeight:"bold",}}>Follow Me:</span>
-          <div style={{dispaly:"flex", marginTop:10,justifyContent:'space-around'}}>
-          <FontAwesomeIcon icon={faGithub} style={{paddingRight:20}} size="2x" />
-          <FontAwesomeIcon icon={faLinkedin} style={{paddingRight:20}} size="2x" />
-          <FontAwesomeIcon icon={faInstagram} style={{paddingRight:20}} size="2x" />
+          <span style={{fontWeight:"bold",color:"white"}}>Follow Me:</span>
+          <div style={{dispaly:"flex", marginTop:25,justifyContent:'space-around',}}>
+          <FontAwesomeIcon icon={faGithub} style={{paddingRight:30}} size="2x" />
+          <FontAwesomeIcon icon={faLinkedin} style={{paddingRight:30}} size="2x" />
+          <FontAwesomeIcon icon={faInstagram} style={{paddingRight:30}} size="2x" />
           </div>
         </div>
         

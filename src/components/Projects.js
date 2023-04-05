@@ -20,7 +20,7 @@ const Projects = ({projectsRef}) => {
     <Container id="projects" >
       <div
         style={{
-          marginTop: 50,
+          marginTop: 80,
           display: "flex",
           justifyContent: "center",
           fontSize: 28,
@@ -34,7 +34,7 @@ const Projects = ({projectsRef}) => {
         style={{
           display: "flex",
           height: "100%",
-          width: "100%",
+          
           justifyContent: "center",
           alignItems: "center",
         }}
@@ -87,6 +87,7 @@ const Container = styled.div`
   background-color: black;
   display: flex;
   flex-direction: column;
+  padding:0 10px;
 `;
 
 const Content = styled.div`
@@ -95,6 +96,7 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+  width:100%;
   padding: 0 20px;
 `;
 

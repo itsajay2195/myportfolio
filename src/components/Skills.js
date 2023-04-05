@@ -36,7 +36,7 @@ function Skills({skillsRef}) {
     <Container id="skills">
       <div
         style={{
-           marginTop:50, 
+           marginTop:80, 
           display: "flex",
           justifyContent: "center",
           fontSize: 28,
@@ -65,9 +65,8 @@ function Skills({skillsRef}) {
 export default Skills;
 
 const Container = styled.div`
-  height: 100vh;
+  height: 95vh;
   background-color: black;
-
   display: flex;
   flex-direction: column;
 `;
