@@ -5,17 +5,19 @@ import CloseIcon from "@material-ui/icons/Close";
 // import {selectCars} from '../features/car/carSlice'
 import { useSelector } from "react-redux";
 
-function Header({ activeComponent, handleLinkClick }) {
+function Header({ activeSection, handleSetActiveComponent }) {
   const [open, setOpen] = useState(false);
   const sections = ["Home", "Skills", "Projects", "Contact"];
 
-  const handleProjectsClick = (event,name) => {
+  const handleProjectsClick = (event, name) => {
     event.preventDefault();
     const projectsSection = document.getElementById(name);
     if (projectsSection) {
       projectsSection.scrollIntoView({ behavior: "smooth" });
+      handleSetActiveComponent(name);
     }
   };
+
   return (
     <Container>
       <Name>
@@ -26,10 +28,21 @@ function Header({ activeComponent, handleLinkClick }) {
         {sections &&
           sections.map((section, index) => (
             <a
+            style={{
+              color: activeSection === section.toLowerCase() ? "white" : null,
+              textDecoration: "none",
+              textDecorationColor: activeSection === section.toLowerCase() ? "white" : null,
+              textDecorationThickness: "2px",
+              textDecorationLine: activeSection === section.toLowerCase() ? "underline": null,
+              paddingBottom: "20px",
+              marginTop: "5px", 
+            }}
+          
               key={index}
               href={`#${section.toLowerCase()}`}
-              onClick={(event)=>handleProjectsClick(event, section.toLowerCase())}
-              // className={activeComponent === car ? "active" : ""}
+              onClick={(event) =>
+                handleProjectsClick(event, section.toLowerCase())
+              }
             >
               {section}
             </a>
@@ -56,12 +69,12 @@ function Header({ activeComponent, handleLinkClick }) {
           sections.map((section, index) => (
             <li key={index}>
               <a
-                href="#"
-                onClick={() => {
-                  handleLinkClick(section);
-
-                  setOpen(false);
-                }}
+                key={index}
+                href={`#${section.toLowerCase()}`}
+                onClick={(event) =>
+                  handleProjectsClick(event, section.toLowerCase())
+                }
+                // className={activeComponent === car ? "active" : ""}
               >
                 {section}
               </a>
@@ -82,7 +95,7 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 0 20px;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
   background: black;
 `;
 

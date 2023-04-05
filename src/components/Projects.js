@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import styled from "styled-components";
 import { mobileProtfolio, featuredProtfolio } from "../constants/data";
 import Slide from "react-reveal/Slide";
-
-// `;
 
 const Projects = ({projectsRef}) => {
   const [portfolioData, setPortfolioData] = useState(mobileProtfolio);
@@ -17,7 +15,7 @@ const Projects = ({projectsRef}) => {
   };
 
   return (
-    <Container id="projects" >
+    <Container ref={projectsRef}  id="projects" >
       <div
         style={{
           marginTop: 80,
@@ -83,7 +81,7 @@ const Gif = styled.img`
 `;
 
 const Container = styled.div`
-  height: 100vh;
+  height: 95vh;
   background-color: black;
   display: flex;
   flex-direction: column;

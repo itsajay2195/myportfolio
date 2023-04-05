@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Section from "./Sections";
 
-function Home() {
+function Home({ homeRef}) {
   return (
-    <Container id="home">
+    <Container id="home" ref={homeRef}>
       <Section
         title="I'm Ajay, working as a React Native Developer. 
         I love to work on products whose impact makes life easier"

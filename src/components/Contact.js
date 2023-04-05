@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const Contact = () => {
+const Contact = ({contactRef}) => {
   const [message, setMessage] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     setMessage(true);
     // alert('Thanks for reaching out!')
   };
+  
   return (
-    <div
+    <Container
       id={"contact"}
-      style={{ display: "flex", flexDirection: "column", flex: 1 }}
+      ref={contactRef}
     >
       <Content>
         <Left>
@@ -34,16 +35,18 @@ const Contact = () => {
           </form>
         </Right>
       </Content>
-    </div>
+    </Container>
   );
 };
 
 export default Contact;
 
 const Container = styled.div`
+  height: 95vh;
+  background-color: black;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  padding:0 10px;
 `;
 const Content = styled.div`
   display: flex;

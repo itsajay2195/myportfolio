@@ -1,6 +1,7 @@
-import React from "react";
+import React,{useEffect} from "react";
 import styled from "styled-components";
 import Slide from 'react-reveal/Slide';
+
 
 const icons = [
   {
@@ -31,9 +32,12 @@ const icons = [
   // add more icons here
 ];
 
-function Skills({skillsRef}) {
+function Skills({ skillsRef}) {
+  // useEffect(() => {
+  //   handleSetActiveComponent('skills');
+  // }, [handleSetActiveComponent]);
   return (
-    <Container id="skills">
+    <Container ref ={skillsRef} id="skills">
       <div
         style={{
            marginTop:80, 
