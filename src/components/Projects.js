@@ -81,7 +81,7 @@ const Gif = styled.img`
 `;
 
 const Container = styled.div`
-  height: 95vh;
+  height: 90vh;
   background-color: black;
   display: flex;
   flex-direction: column;

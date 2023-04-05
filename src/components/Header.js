@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 function Header({ activeSection, handleSetActiveComponent }) {
   const [open, setOpen] = useState(false);
-  const sections = ["Home", "Skills", "Projects", "Contact"];
+  const sections = ["Home", "Skills", "Projects", "Contact", "Resume"];
 
   const handleProjectsClick = (event, name) => {
     event.preventDefault();

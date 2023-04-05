@@ -6,15 +6,14 @@ const Contact = ({contactRef}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setMessage(true);
-    // alert('Thanks for reaching out!')
   };
   
   return (
     <Container
-      id={"contact"}
+      id="contact"
       ref={contactRef}
     >
-      <Content>
+      <Content >
         <Left>
           <img src="images/shake.svg" alt="" />
         </Left>
@@ -46,14 +45,15 @@ const Container = styled.div`
   background-color: black;
   display: flex;
   flex-direction: column;
-  padding:0 10px;
+  padding-top:50px;
 `;
+
 const Content = styled.div`
   display: flex;
   flex-direction: row;
   background-color: black;
   justify-content: space-between;
-  height: 100vh;
+  height: 95vh;
 `;
 
 const Left = styled.div`

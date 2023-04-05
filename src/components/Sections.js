@@ -2,8 +2,18 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import DeveloperLottie from "./Lottie/DeveloperLottie";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub,faLinkedin,faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faLinkedin,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+
+const socialIcons = [
+  { icon: faGithub, link: "https://github.com/itsajay2195" },
+  { icon: faLinkedin, link: "https://www.linkedin.com/in/itsajaykumar/" },
+  { icon: faInstagram, link: "https://www.instagram.com/ajaycnv/?hl=en" },
+];
 
 function Section(props) {
   const textRef = useRef();
@@ -11,30 +21,53 @@ function Section(props) {
   return (
     <Wrap className="Home">
       <Left>
-          <div
-            style={{
-              display:"flex",
-              justifyContent:"center"
-            }}
-          >
-            <MyImg src={"/images/Ajay.jpeg"} alt="My Image" />
-          </div>
-      
-        <div style={{display:"flex", flexDirection:"column" , margin:40, borderWidth:"10px", borderColor:"red",height:"20vh"}}>
-        <Text>Hey! I Am</Text>
-        <Name>Ajaykumar Rajasekaran</Name>
-        <span style={{marginTop:10,color:"white"}}> An India based Software developer passionate and experienced in developing mobile applications using <Name style={{fontSize:"14px"}}> React Native</Name>.</span>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <MyImg src={"/images/Ajay.jpeg"} alt="My Image" />
         </div>
-        
-        <div style={{dispaly:"flex", flexDirection:"column",margin:40}}>
-          <span style={{fontWeight:"bold",color:"white"}}>Follow Me:</span>
-          <div style={{dispaly:"flex", marginTop:25,justifyContent:'space-around',}}>
-          <FontAwesomeIcon icon={faGithub} style={{paddingRight:30}} size="2x" />
-          <FontAwesomeIcon icon={faLinkedin} style={{paddingRight:30}} size="2x" />
-          <FontAwesomeIcon icon={faInstagram} style={{paddingRight:30}} size="2x" />
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            margin: 40,
+            borderWidth: "10px",
+            borderColor: "red",
+            height: "20vh",
+          }}
+        >
+          <Text>Hey! I Am</Text>
+          <Name>Ajaykumar Rajasekaran</Name>
+          <span style={{ marginTop: 10, color: "white" }}>
+            {" "}
+            An India based Software developer passionate and experienced in
+            developing mobile applications using{" "}
+            <Name style={{ fontSize: "14px" }}> React Native</Name>.
+          </span>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", margin: 40 , zIndex:40}}>
+          <span style={{ fontWeight: "bold", color: "white" }}>Follow Me:</span>
+          <div style={{ display: "flex", marginTop: 25 }}>
+            {socialIcons.map((socialIcon) => (
+              <a
+                href={socialIcon.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={socialIcon.icon}
+                  size="2x"
+                  style={{ paddingRight: 30 }}
+                />
+              </a>
+            ))}
           </div>
         </div>
-        
       </Left>
 
       {/* <Center>
@@ -83,10 +116,10 @@ const Wrap = styled.div`
 const Left = styled.div`
   width: 100vh;
   height: 90vh;
-  margin-top:140px;
+  margin-top: 140px;
   padding: 0px 40px;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
 `;
 const Right = styled.div`
   display: flex;
@@ -127,16 +160,16 @@ const DownArrow = styled.img`
 `;
 
 const Text = styled.span`
-font-family: "Montserrat", sans-serif;
-font-size: 44px;
-font-weight:bold;
-color:white
+  font-family: "Montserrat", sans-serif;
+  font-size: 44px;
+  font-weight: bold;
+  color: white;
 `;
 
 const Name = styled.span`
   font-family: "Montserrat", sans-serif;
   font-size: 44px;
-  font-weight:bold;
+  font-weight: bold;
   flex-wrap: nowrap;
   background-image: linear-gradient(
     to right,
