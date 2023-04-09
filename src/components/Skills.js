@@ -6,27 +6,27 @@ import Slide from 'react-reveal/Slide';
 const icons = [
   {
     name: "React",
-    imgurl: "/images/react.png",
+    imgurl: "images/react.png",
     key: "react-icon",
   },
   {
     name: "React-Native",
-    imgurl: "/images/atom.png",
+    imgurl: "images/atom.png",
     key: "atom-icon",
   },
   {
     name: "JavaScript",
-    imgurl: "/images/js.png",
+    imgurl: "images/js.png",
     key: "js-icon",
   },
   {
     name: "Android",
-    imgurl: "/images/android.png",
+    imgurl: "images/android.png",
     key: "android-icon",
   },
   {
     name: "Tailwind",
-    imgurl: "/images/tailwind.png",
+    imgurl: "images/tailwind.png",
     key: "tailwind-icon",
   },
   // add more icons here
