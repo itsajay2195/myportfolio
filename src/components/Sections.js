@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
-import Fade from "react-reveal/Fade";
 import DeveloperLottie from "./Lottie/DeveloperLottie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -27,7 +26,7 @@ function Section(props) {
             justifyContent: "center",
           }}
         >
-          <MyImg src={"/images/Ajay.jpeg"} alt="My Image" />
+          <MyImg src={"images/Ajay.jpeg"} alt="My Image" />
         </div>
 
         <div
@@ -74,7 +73,7 @@ function Section(props) {
         <MyImg src={"/images/Ajay.jpeg"} alt="My Image" />
       </Center> */}
       <Right>
-        <DeveloperLottie animationPath={"/lottie/dev.json"} />
+        <DeveloperLottie animationPath={"lottie/dev.json"} />
       </Right>
 
       <div

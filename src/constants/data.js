@@ -2,7 +2,7 @@ export const mobileProtfolio = [
   {
     id: 1,
     title: "HappyFox Helpdeskkjkj",
-    src: "/images/happyfox.jpeg",
+    src: "images/happyfox.jpeg",
     gif: "gifs/hf-gif.gif",
   },
   {
@@ -23,7 +23,7 @@ export const featuredProtfolio = [
   {
     id: 1,
     title: "HappyFox Helpdesk",
-    src: "/images/happyfox.jpeg",
+    src: "images/happyfox.jpeg",
     gif: "gifs/hf-gif.gif",
   },
   {
@@ -46,7 +46,7 @@ export const sliderData = [
   {
     id: 1,
     title: "HappyFox Helpdesk",
-    src: "/images/happyfox.jpeg",
+    src: "images/happyfox.jpeg",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard. ",
     gif: "assets/hf-gif.gif",
   },
