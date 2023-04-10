@@ -8,29 +8,58 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
-const socialIcons = [  { icon: faGithub, link: "https://github.com/itsajay2195" },  { icon: faLinkedin, link: "https://www.linkedin.com/in/itsajaykumar/" },  { icon: faInstagram, link: "https://www.instagram.com/ajaycnv/?hl=en" },];
+const socialIcons = [
+  { icon: faGithub, link: "https://github.com/itsajay2195" },
+  { icon: faLinkedin, link: "https://www.linkedin.com/in/itsajaykumar/" },
+  { icon: faInstagram, link: "https://www.instagram.com/ajaycnv/?hl=en" },
+];
 
 function Section(props) {
   const textRef = useRef();
 
   return (
     <Wrap className="Home">
-      <Left>
-        <MyImg src={"images/Ajay.jpeg"} alt="My Image" />
-
-        <div style={{ margin: "40px 0", textAlign: "center" }}>
+       <div
+          style={{
+            display: "flex",
+            flexDirection:"column",
+            justifyContent: "center",
+            alignItems:"center"
+          }}
+        >
+          <MyImg src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"  alt="My Image" />
+        </div>
+     
+     <div style={{display:"flex", alignItems:"center"}}>
+     <Left>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           <Text>Hey! I Am</Text>
           <Name>Ajaykumar Rajasekaran</Name>
-          <span style={{ marginTop: 10, color: "white" }}>
+          <span style={{ marginTop: 20, color: "white" }}>
+            {" "}
             An India based Software developer passionate and experienced in
             developing mobile applications using{" "}
             <Name style={{ fontSize: "14px" }}> React Native</Name>.
           </span>
         </div>
 
-        <div style={{ margin: "40px 0", textAlign: "center" }}>
+    
+      </Left>
+
+      <Right>
+        <DeveloperLottie animationPath={"lottie/dev.json"} />
+        {/* <MyImg src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"  alt="My Image" /> */}
+      </Right>
+     </div>
+
+     <div style={{ display: "flex", flexDirection: "column",alignItems:"center",margin: 40 , zIndex:40}}>
           <span style={{ fontWeight: "bold", color: "white" }}>Follow Me:</span>
-          <div style={{ display: "flex", justifyContent: "center", marginTop: 25 }}>
+          <div style={{ display: "flex", marginTop: 25 }}>
             {socialIcons.map((socialIcon) => (
               <a
                 href={socialIcon.link}
@@ -40,19 +69,13 @@ function Section(props) {
                 <FontAwesomeIcon
                   icon={socialIcon.icon}
                   size="2x"
-                  style={{ margin: "0 10px" }}
+                  style={{ paddingRight: 30 }}
                 />
               </a>
             ))}
           </div>
         </div>
-      </Left>
-
-      <Right>
-        <DeveloperLottie animationPath={"lottie/dev.json"} />
-      </Right>
-
-      <DownArrow src="images/down-arrow.svg"></DownArrow>
+    
     </Wrap>
   );
 }
@@ -61,53 +84,59 @@ export default Section;
 
 const Wrap = styled.div`
   display: flex;
-  flex-direction: column;
   background-color: black;
+  flex-direction:column;
+  height:70vh
 `;
 
 const Left = styled.div`
-  width: 100%;
-  padding: 0 20px;
-  text-align: center;
-  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
 `;
-
 const Right = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;
+  padding: 60px;
 `;
 
 const MyImg = styled.img`
-  height: 150px;
-  width: 150px;
-  border-radius: 100px;
-  margin-bottom: 20px;
+  height:150px;
+  width:150px;
+  border-radius:100px;
+
 `;
 
-const DownArrow = styled.img`
+const LeftButton = styled.div`
+  background-color: rgba(23, 26, 32, 0.8);
   height: 40px;
-  animation: animateDown 1s infinite;
-  margin-top: 20px;
-  overflow-x: hidden;
+  width: 250px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  opacity: 0.85;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 8px;
 `;
 
 const Text = styled.span`
   font-family: "Montserrat", sans-serif;
-  font-size: 36px;
+  font-size: 24px;
   font-weight: bold;
   color: white;
 `;
 
 const Name = styled.span`
   font-family: "Montserrat", sans-serif;
-  font-size: 36px;
+  font-size: 22px;
   font-weight: bold;
+  flex-wrap: nowrap;
   background-image: linear-gradient(
     to right,
-   
-
     #6371c7,
     #5563c1,
     #4656bb,

@@ -74,19 +74,19 @@ function App() {
 
   return (
     <div className="App">
-      <Header
+      {/* <Header
         activeSection={activeSection}
         handleSetActiveComponent={handleSetActiveComponent}
         handleResumeClick={handleResumeClick}
-      ></Header>
+      ></Header> */}
       <Home homeRef={homeRef} />
-      <Skills skillsRef={skillsRef} />
-      <Projects projectsRef={projectsRef} />
+      {/* <Skills skillsRef={skillsRef} />
+      <Projects projectsRef={projectsRef} /> */}
       {/* {showResume && <ResumePDF />} */}
-      {activeSection !== "contact" ? (
+      {/* {activeSection !== "contact" ? (
         <HireMeButton handleSetActiveComponent={handleSetActiveComponent} />
-      ) : null}
-      <Contact contactRef={contactRef} />
+      ) : null} */}
+      {/* <Contact contactRef={contactRef} /> */}
     </div>
   );
 }
