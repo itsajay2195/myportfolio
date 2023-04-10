@@ -52,12 +52,12 @@ function Section(props) {
       </Left>
 
       <Right>
-        <DeveloperLottie animationPath={"lottie/dev.json"} />
+        <DeveloperLottie animationPath={"lottie/dev.json"}  height={150} width={150}/>
         {/* <MyImg src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"  alt="My Image" /> */}
       </Right>
      </div>
 
-     <div style={{ display: "flex", flexDirection: "column",alignItems:"center",margin: 40 , zIndex:40}}>
+     <div style={{ display: "flex", flexDirection: "column",alignItems:"center", zIndex:40}}>
           <span style={{ fontWeight: "bold", color: "white" }}>Follow Me:</span>
           <div style={{ display: "flex", marginTop: 25 }}>
             {socialIcons.map((socialIcon) => (
@@ -86,7 +86,8 @@ const Wrap = styled.div`
   display: flex;
   background-color: black;
   flex-direction:column;
-  height:100%
+  height:100%;
+  border-radius:10px
 `;
 
 const Left = styled.div`

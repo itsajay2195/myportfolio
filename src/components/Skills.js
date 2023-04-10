@@ -1,6 +1,7 @@
 import React,{useEffect} from "react";
 import styled from "styled-components";
 import Slide from 'react-reveal/Slide';
+import DeveloperLottie from "./Lottie/DeveloperLottie";
 
 
 const icons = [
@@ -41,16 +42,22 @@ function Skills({ height}) {
       <div
         style={{
           display: "flex",
+          flexDirection:"row",
           justifyContent: "center",
+          alignItems:"center",
         }}
       >
         <HeaderText>Skills</HeaderText>
+        <div style={{paddingLeft:30,display:"flex",justifyContent:"center",alignItems:"center"}}>
+          <DeveloperLottie animationPath={"lottie/settings-roll.json"}  height={30} width={30}/>
+        </div>
+        
       </div>
       <Content>
         {icons.map((icon) => (
           <IconWrapper key={icon.key}>
             <Slide left>
-              <MyImg src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" alt={icon.name} />
+              <MyImg src={icon.imgurl} alt={icon.name} />
               <span >
                 <Name>{icon.name}</Name>
               </span>
@@ -70,6 +77,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding:10px;
+  border-radius:10px
 `;
 
 const Content = styled.div`

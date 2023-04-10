@@ -104,11 +104,12 @@ import Skills from './components/Skills'
 const heights = ["70vh","40vh"];
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+ 
   ...theme.typography.body2,
-  padding: theme.spacing(0.5),
+  padding: theme.spacing(0.085),
   textAlign: "center",
-  color: theme.palette.text.secondary,
+  borderRadius:10
+ 
 }));
 
 export default function BasicMasonry() {
@@ -130,7 +131,7 @@ export default function BasicMasonry() {
 
   return (
     <Box sx={{ width: "100%", height: "100vh" ,  backgroundImage: 'linear-gradient(to right, #6371c7, #5563c1, #4656bb, #3848b5, #2a3bae)'}}>
-      <Masonry columns={2} spacing={1}>
+      <Masonry columns={2} spacing={0}>
         {heights.map((height, index) => (
         <Item key={1} sx={{ height: height }}>
          {componentDecider(index,height)}
