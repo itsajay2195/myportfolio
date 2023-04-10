@@ -179,7 +179,7 @@ const IconWrapper = styled.div`
 `;
 
 const MyImg = styled.img`
-  height: 100%;
+  height: 40%;
   width: 100%;
   border-radius: 15px;
 `;
