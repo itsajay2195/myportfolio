@@ -42,7 +42,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function BasicMasonry() {
   return (
     <Box sx={{ width: "100%", height: "100vh" }}>
-      <Masonry columns={2} spacing={2}>
+      <Masonry columns={2} spacing={3}>
         {/* {heights.map((height, index) => ( */}
           <Item key={1} sx={{ height:"70vh" }}>
             <Section

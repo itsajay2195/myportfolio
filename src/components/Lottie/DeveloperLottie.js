@@ -11,7 +11,9 @@ const DeveloperLottie = ({ animationPath }) => {
 
 	return (
 		<div onClick={() => null}>
-			<Lottie  options={defaultOptions} />
+			<Lottie   options={defaultOptions} height={150}
+              width={150}
+ />
 		</div>
 	);
 };
