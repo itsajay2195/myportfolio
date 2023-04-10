@@ -66,8 +66,7 @@ const Projects = ({ projectsRef }) => {
           <IconWrapper key={portfolioData.id}>
             <Slide left>
               <MyImg
-                src={
-                  portfolioData.src  }
+                src={portfolioData.src  }
                 alt={portfolioData.title}
               />
               <span style={{ paddingTop: 0 }}>
@@ -180,7 +179,7 @@ const IconWrapper = styled.div`
 `;
 
 const MyImg = styled.img`
-  height: 95%;
+  height: 35%;
   width: 100%;
   border-radius: 15px;
 `;
