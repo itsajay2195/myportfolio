@@ -48,7 +48,7 @@ function Skills({ height}) {
         }}
       >
         <HeaderText>Skills</HeaderText>
-        <div style={{paddingLeft:30,display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <div style={{paddingLeft:8,display:"flex",justifyContent:"center",alignItems:"center"}}>
           <DeveloperLottie animationPath={"lottie/settings-roll.json"}  height={30} width={30}/>
         </div>
         

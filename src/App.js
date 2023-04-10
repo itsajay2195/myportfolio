@@ -16,7 +16,6 @@
 //     setActiveSection(name);
 //   };
 
-
 //   const handleResumeClick = () => {
 //     window.open(
 //       "https://drive.google.com/file/d/1FESKJoJUEkKpc1WgL1SoKqSh_AgQQ9Gj/view?usp=sharing")
@@ -98,22 +97,21 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
-import Section from './components/Sections'
-import Skills from './components/Skills'
+import Section from "./components/Sections";
+import Skills from "./components/Skills";
+import Experience from "./components/Experience"
 
-const heights = ["70vh","40vh"];
+const heights = ["50vh", "40vh","60vh"];
 
 const Item = styled(Paper)(({ theme }) => ({
- 
   ...theme.typography.body2,
   padding: theme.spacing(0.085),
   textAlign: "center",
-  borderRadius:10
- 
+  borderRadius: 10,
 }));
 
 export default function BasicMasonry() {
-  const componentDecider = (index,height) => {
+  const componentDecider = (index, height) => {
     switch (index) {
       case 0:
         return (
@@ -123,20 +121,27 @@ export default function BasicMasonry() {
           />
         );
       case 1:
-        return (
-          <Skills height={height}/>
-        );
+        return <Skills height={height} />;
+      case 2:
+        return <Experience height={height} />;
     }
   };
 
   return (
-    <Box sx={{ width: "100%", height: "100vh" ,  backgroundImage: 'linear-gradient(to right, #6371c7, #5563c1, #4656bb, #3848b5, #2a3bae)'}}>
+    <Box
+      sx={{
+        width: "100%",
+        height: "100vh",
+        backgroundImage:
+          "linear-gradient(to right, #6371c7, #5563c1, #4656bb, #3848b5, #2a3bae)",
+      }}
+    >
       <Masonry columns={2} spacing={0}>
         {heights.map((height, index) => (
-        <Item key={1} sx={{ height: height }}>
-         {componentDecider(index,height)}
-        </Item>
-        ))} 
+          <Item key={1} sx={{ height: height }}>
+            {componentDecider(index, height)}
+          </Item>
+        ))}
       </Masonry>
     </Box>
   );

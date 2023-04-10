@@ -30,7 +30,7 @@ function Section(props) {
            <MyImg src={"images/Ajay.jpeg"} alt="My Image" />
         </div>
      
-     <div style={{display:"flex", alignItems:"center"}}>
+     <div style={{display:"flex", height:"50%",alignItems:"center",}}>
      <Left>
         <div
           style={{
@@ -40,7 +40,7 @@ function Section(props) {
         >
           <Text>Hey! I Am</Text>
           <Name>Ajaykumar Rajasekaran</Name>
-          <span style={{ marginTop: 20, color: "white" }}>
+          <span style={{ color: "white" }}>
             {" "}
             An India based Software developer passionate and experienced in
             developing mobile applications using{" "}
@@ -59,7 +59,7 @@ function Section(props) {
 
      <div style={{ display: "flex", flexDirection: "column",alignItems:"center", zIndex:40}}>
           <span style={{ fontWeight: "bold", color: "white" }}>Follow Me:</span>
-          <div style={{ display: "flex", marginTop: 25 }}>
+          <div style={{ display: "flex", marginTop: 15 }}>
             {socialIcons.map((socialIcon) => (
               <a
                 href={socialIcon.link}
@@ -102,8 +102,8 @@ const Right = styled.div`
 `;
 
 const MyImg = styled.img`
-  height:150px;
-  width:150px;
+  height:100px;
+  width:100px;
   border-radius:100px;
 
 `;
