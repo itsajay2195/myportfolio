@@ -86,7 +86,7 @@ const Wrap = styled.div`
   display: flex;
   background-color: black;
   flex-direction:column;
-  height:70vh
+  height:100%
 `;
 
 const Left = styled.div`

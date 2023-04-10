@@ -65,7 +65,7 @@ function Skills({ height}) {
 export default Skills;
 
 const Container = styled.div`
-  height: 40vh;
+  height:100%;
   background-color: black;
   display: flex;
   flex-direction: column;
