@@ -19,63 +19,67 @@ function Section(props) {
 
   return (
     <Wrap className="Home">
-       <div
-          style={{
-            display: "flex",
-            flexDirection:"column",
-            justifyContent: "center",
-            alignItems:"center"
-          }}
-        >
-           <MyImg src={"images/Ajay.jpeg"} alt="My Image" />
-        </div>
-     
-     <div style={{display:"flex", height:"50%",alignItems:"center",}}>
-     <Left>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <Text>Hey! I Am</Text>
-          <Name>Ajaykumar Rajasekaran</Name>
-          <span style={{ color: "white" }}>
-            {" "}
-            An India based Software developer passionate and experienced in
-            developing mobile applications using{" "}
-            <Name style={{ fontSize: "14px" }}> React Native</Name>.
-          </span>
-        </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <MyImg src={"images/Ajay.jpeg"} alt="My Image" />
+      </div>
 
-    
-      </Left>
+      <div style={{ display: "flex", height: "50%", alignItems: "center" }}>
+        <Left>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Text>
+              Hey! I Am <Name>Ajaykumar Rajasekaran</Name>
+            </Text>
 
-      <Right>
-        <DeveloperLottie animationPath={"lottie/dev.json"}  height={150} width={150}/>
-        {/* <MyImg src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"  alt="My Image" /> */}
-      </Right>
-     </div>
-
-     <div style={{ display: "flex", flexDirection: "column",alignItems:"center", zIndex:40}}>
-          <span style={{ fontWeight: "bold", color: "white" }}>Follow Me:</span>
-          <div style={{ display: "flex", marginTop: 15 }}>
-            {socialIcons.map((socialIcon) => (
-              <a
-                href={socialIcon.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={socialIcon.icon}
-                  size="2x"
-                  style={{ paddingRight: 30 }}
-                />
-              </a>
-            ))}
+            <span style={{ color: "white" }}>
+              An India based Software developer passionate and experienced in
+              developing mobile applications using <Name style={{ fontSize: "14px" }}> React Native.</Name>
+            </span>
           </div>
+        </Left>
+
+        <Right>
+          <DeveloperLottie
+            animationPath={"lottie/dev.json"}
+            height={150}
+            width={150}
+          />
+          {/* <MyImg src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"  alt="My Image" /> */}
+        </Right>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          zIndex: 40,
+        }}
+      >
+        <span style={{ fontWeight: "bold", color: "white" }}>Follow Me:</span>
+        <div style={{ display: "flex", marginTop: 15 }}>
+          {socialIcons.map((socialIcon) => (
+            <a href={socialIcon.link} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon
+                icon={socialIcon.icon}
+                size="2x"
+                style={{ paddingRight: 30 }}
+              />
+            </a>
+          ))}
         </div>
-    
+      </div>
     </Wrap>
   );
 }
@@ -85,9 +89,9 @@ export default Section;
 const Wrap = styled.div`
   display: flex;
   background-color: black;
-  flex-direction:column;
-  height:100%;
-  border-radius:10px
+  flex-direction: column;
+  height: 100%;
+  border-radius: 10px;
 `;
 
 const Left = styled.div`
@@ -102,26 +106,9 @@ const Right = styled.div`
 `;
 
 const MyImg = styled.img`
-  height:100px;
-  width:100px;
-  border-radius:100px;
-
-`;
-
-const LeftButton = styled.div`
-  background-color: rgba(23, 26, 32, 0.8);
-  height: 40px;
-  width: 250px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100px;
+  width: 100px;
   border-radius: 100px;
-  opacity: 0.85;
-  text-transform: uppercase;
-  font-size: 12px;
-  cursor: pointer;
-  margin: 8px;
 `;
 
 const Text = styled.span`
@@ -133,7 +120,7 @@ const Text = styled.span`
 
 const Name = styled.span`
   font-family: "Montserrat", sans-serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
   flex-wrap: nowrap;
   background-image: linear-gradient(

@@ -101,8 +101,9 @@ import Section from "./components/Sections";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience"
 import HireMeButton from "./components/HireMeBtn";
+import Projects from "./components/Projects"
 
-const heights = ["50vh", "40vh","60vh"];
+const heights = ["50vh", "40vh","60vh","50vh"];
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -125,6 +126,8 @@ export default function BasicMasonry() {
         return <Skills height={height} />;
       case 2:
         return <Experience height={height} />;
+      case 3:
+        return <Projects height={height}/>;
     }
   };
 
@@ -138,7 +141,7 @@ export default function BasicMasonry() {
       }}
     >
       <HireMeButton />
-      <Masonry columns={2} spacing={0}>
+      <Masonry columns={2} spacing={0.35}>
         {heights.map((height, index) => (
           <Item key={1} sx={{ height: height }}>
             {componentDecider(index, height)}

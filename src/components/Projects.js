@@ -1,24 +1,36 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { mobileProtfolio, featuredProtfolio } from "../constants/data";
+import { mobileProtfolio } from "../constants/data";
 import Slide from "react-reveal/Slide";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
-const Projects = ({projectsRef}) => {
-  const [portfolioData, setPortfolioData] = useState(mobileProtfolio);
+const Projects = ({ projectsRef }) => {
+  let index = 0;
+  const [portfolioData, setPortfolioData] = useState(mobileProtfolio[index]);
 
-  const handleArrowClick = () => {
-    if (portfolioData === mobileProtfolio) {
-      setPortfolioData(featuredProtfolio);
+  const handleLeftArrowClick = () => {
+    if (index === 0) {
+      index = mobileProtfolio.length - 1;
     } else {
-      setPortfolioData(mobileProtfolio);
+      index--;
     }
+    setPortfolioData(mobileProtfolio[index]);
+  };
+
+  const handleRightArrowClick = () => {
+    if (index === mobileProtfolio.length - 1) {
+      index = 0;
+    } else {
+      index++;
+    }
+    setPortfolioData(mobileProtfolio[index]);
   };
 
   return (
-    <Container ref={projectsRef}  id="projects" >
+    <Container ref={projectsRef} id="projects">
       <div
         style={{
-          marginTop: 80,
           display: "flex",
           justifyContent: "center",
           fontSize: 28,
@@ -32,28 +44,52 @@ const Projects = ({projectsRef}) => {
         style={{
           display: "flex",
           height: "100%",
-          
-          justifyContent: "center",
+          justifyContent: "space-around",
           alignItems: "center",
         }}
       >
-        <Arrow onClick={handleArrowClick} src={"images/arrow.png"} alt={"left-arrow"}  direction="left"/>
+        <Arrow
+          onClick={handleLeftArrowClick}
+          src={"images/arrow.png"}
+          alt={"left-arrow"}
+          direction="left"
+        />
+
         <Content>
-          {portfolioData.map((item) => (
-            <IconWrapper key={item.id}>
-              <Slide left>
-                <MyImg src={item.src} alt={item.title} />
-                <span style={{ paddingTop: 20 }}>
-                  <Name>{item.title}</Name>
-                </span>
-              </Slide>
-              <Gif src={item.gif} alt="myGif" />
-            </IconWrapper>
-          ))}
+          <IconWrapper key={portfolioData.id}>
+            <Slide left>
+              <MyImg
+                src={
+                  "https://images.unsplash.com/photo-1612441804231-77a36b284856?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bW91bnRhaW4lMjBsYW5kc2NhcGV8ZW58MHx8MHx8&w=1000&q=80"
+                }
+                alt={portfolioData.title}
+              />
+              <span style={{ paddingTop: 0 }}>
+                <Name>{portfolioData.title}</Name>
+              </span>
+            </Slide>
+            <Hover src={portfolioData.gif} alt="myGif">
+              <PlaystoreLink>
+                <LinkText>
+                  Link to playstore
+                  <ExternalLink src={"images/arrow.png"} alt={"external"} />
+                </LinkText>
+              </PlaystoreLink>
+              <AppstoreLink>
+                <LinkText>
+                  Link to Appstore{" "}
+                  <ExternalLink src={"images/arrow.png"} alt={"external"} />
+                </LinkText>
+              </AppstoreLink>
+            </Hover>
+          </IconWrapper>
         </Content>
-        <Arrow  onClick={handleArrowClick} src={"images/arrow.png"} alt={"left-arrow"} />
+        <Arrow
+          onClick={handleRightArrowClick}
+          src={"images/external-link.png"}
+          alt={"right-arrow"}
+        />
       </div>
-      <DownArrow src="images/down-arrow.svg"></DownArrow>
     </Container>
   );
 };
@@ -63,58 +99,77 @@ export default Projects;
 const Arrow = styled.img`
   height: 80px;
   width: 80px;
-  padding:10px;
+  padding: 10px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50px;
-  transform: ${props => (props.direction === "left" ? "scaleX(-1)" : "none")};
+  transform: ${(props) => (props.direction === "left" ? "scaleX(-1)" : "none")};
 `;
 
-const Gif = styled.img`
-  display: none;
-  position: absolute;
-  height: 190px;
-  width: 100px;
-  margin-bottom: 45px;
-  border-radius: 15px;
+const ExternalLink = styled.img`
+  height: 20px;
+  width: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color:white;
+`;
 
-  z-index: 1;
+const PlaystoreLink = styled.div`
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  justify-content: center;
+  align-item: center;
+`;
+
+const AppstoreLink = styled.div`
+  margin-top: 10px;
+`;
+
+const LinkText = styled.a`
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
 `;
 
 const Container = styled.div`
-  height: 90vh;
+  height: 100%;
   background-color: black;
   display: flex;
   flex-direction: column;
-  padding:0 10px;
+  overflow: auto;
+  border-radius: 10px;
 `;
 
 const Content = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width:100%;
-  padding: 0 20px;
+  display: flex;
+  width: 50%;
+`;
+
+const Hover = styled.div`
+  display: none;
+  position: absolute;
+  height: 36%;
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  border-radius: 10px;
 `;
 
 const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  margin: 0px 120px;
-  padding: 20px;
-  &:hover ${Gif} {
+  &:hover ${Hover} {
     display: block;
   }
 `;
 
 const MyImg = styled.img`
-  height: 180px;
-  width: 100px;
+  height: 95%;
+  width: 100%;
   border-radius: 15px;
 `;
 
@@ -137,7 +192,7 @@ const Name = styled.span`
 
 const HeaderText = styled.span`
   font-family: "Montserrat", sans-serif;
-  font-size: 34px;
+  font-size: 24px;
   font-weight: bold;
   flex-wrap: nowrap;
   background-image: linear-gradient(
@@ -150,10 +205,4 @@ const HeaderText = styled.span`
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-`;
-
-const DownArrow = styled.img`
-  height: 40px;
-  animation: animateDown 1s infinite;
-  overflow-x: hidden;
 `;
