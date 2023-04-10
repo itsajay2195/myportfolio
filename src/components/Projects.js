@@ -6,25 +6,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Projects = ({ projectsRef }) => {
-  let index = 0;
+  const [index, setIndex] = useState(0);
   const [portfolioData, setPortfolioData] = useState(mobileProtfolio[index]);
-
+  
   const handleLeftArrowClick = () => {
     if (index === 0) {
-      index = mobileProtfolio.length - 1;
+      setIndex(mobileProtfolio.length - 1);
     } else {
-      index--;
+      setIndex(index - 1);
     }
-    setPortfolioData(mobileProtfolio[index]);
   };
-
+  
   const handleRightArrowClick = () => {
     if (index === mobileProtfolio.length - 1) {
-      index = 0;
+      setIndex(0);
     } else {
-      index++;
+      setIndex(index + 1);
     }
+  };
+  
+  useEffect(() => {
     setPortfolioData(mobileProtfolio[index]);
+  }, [index]);
+  
+
+    const handleLinkclick = (link) => {
+    window.open(link)
   };
 
   return (
@@ -60,8 +67,7 @@ const Projects = ({ projectsRef }) => {
             <Slide left>
               <MyImg
                 src={
-                  "https://images.unsplash.com/photo-1612441804231-77a36b284856?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bW91bnRhaW4lMjBsYW5kc2NhcGV8ZW58MHx8MHx8&w=1000&q=80"
-                }
+                  portfolioData.src  }
                 alt={portfolioData.title}
               />
               <span style={{ paddingTop: 0 }}>
@@ -69,18 +75,24 @@ const Projects = ({ projectsRef }) => {
               </span>
             </Slide>
             <Hover src={portfolioData.gif} alt="myGif">
-              <PlaystoreLink>
-                <LinkText>
+            {portfolioData.pslink &&  <PlaystoreLink>
+                <LinkText onClick={()=>handleLinkclick(portfolioData.pslink )}>
                   Link to playstore
                   <ExternalLink src={"images/external-link.png"} alt={"external"} />
                 </LinkText>
-              </PlaystoreLink>
-              <AppstoreLink>
-                <LinkText>
+              </PlaystoreLink>}
+             {portfolioData.aslink && <AppstoreLink>
+                <LinkText onClick={()=>handleLinkclick(portfolioData.aslink )}>
                   Link to Appstore{" "}
                   <ExternalLink src={"images/external-link.png"} alt={"external"} />
                 </LinkText>
-              </AppstoreLink>
+              </AppstoreLink>}
+              {portfolioData.exlink && <AppstoreLink>
+                <LinkText onClick={()=>handleLinkclick(portfolioData.exlink )}>
+                  This is my side gig, so Link to Expo{" "}
+                  <ExternalLink src={"images/external-link.png"} alt={"external"} />
+                </LinkText>
+              </AppstoreLink>}
             </Hover>
           </IconWrapper>
         </Content>
