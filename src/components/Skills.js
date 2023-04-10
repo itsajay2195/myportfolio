@@ -32,19 +32,16 @@ const icons = [
   // add more icons here
 ];
 
-function Skills({ skillsRef}) {
+function Skills({ height}) {
   // useEffect(() => {
   //   handleSetActiveComponent('skills');
   // }, [handleSetActiveComponent]);
   return (
-    <Container ref ={skillsRef} id="skills">
+    <Container id="skills">
       <div
         style={{
-           marginTop:80, 
           display: "flex",
           justifyContent: "center",
-          fontSize: 28,
-          fontFamily: "",
         }}
       >
         <HeaderText>Skills</HeaderText>
@@ -53,15 +50,14 @@ function Skills({ skillsRef}) {
         {icons.map((icon) => (
           <IconWrapper key={icon.key}>
             <Slide left>
-              <MyImg src={icon.imgurl} alt={icon.name} />
-              <span style={{ paddingTop: 20 }}>
+              <MyImg src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" alt={icon.name} />
+              <span >
                 <Name>{icon.name}</Name>
               </span>
             </Slide>
           </IconWrapper>
         ))}
       </Content>
-      <DownArrow src="images/down-arrow.svg"></DownArrow>
     </Container>
   );
 }
@@ -69,15 +65,16 @@ function Skills({ skillsRef}) {
 export default Skills;
 
 const Container = styled.div`
-  height: 95vh;
+  height: 40vh;
   background-color: black;
   display: flex;
   flex-direction: column;
+  padding:10px;
 `;
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -93,8 +90,8 @@ const IconWrapper = styled.div`
 `;
 
 const MyImg = styled.img`
-  height:80px;
-  width;80px;
+  max-height:60px;
+  max-width:60px;
 `;
 
 const Name = styled.span`
@@ -116,7 +113,7 @@ const Name = styled.span`
 
 const HeaderText = styled.span`
   font-family: "Montserrat", sans-serif;
-  font-size: 34px;
+  font-size: 18px;
   font-weight: bold;
   flex-wrap: nowrap;
   background-image: linear-gradient(

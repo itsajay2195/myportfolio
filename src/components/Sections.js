@@ -27,7 +27,7 @@ function Section(props) {
             alignItems:"center"
           }}
         >
-          <MyImg src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"  alt="My Image" />
+           <MyImg src={"images/Ajay.jpeg"} alt="My Image" />
         </div>
      
      <div style={{display:"flex", alignItems:"center"}}>

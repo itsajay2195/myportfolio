@@ -40,19 +40,38 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function BasicMasonry() {
+  const componentDecider = (index) => {
+    switch (index) {
+      case 1:
+        return (
+          <Section
+            title="I'm Ajay, working as a React Native Developer. 
+            I love to work on products whose impact makes life easier"
+          />
+        );
+      case 2:
+        return (
+          <Section
+            title="I'm Ajay, working as a React Native Developer. 
+              I love to work on products whose impact makes life easier"
+          />
+        );
+    }
+  };
+
   return (
     <Box sx={{ width: "100%", height: "100vh" }}>
       <Masonry columns={2} spacing={3}>
         {/* {heights.map((height, index) => ( */}
-          <Item key={1} sx={{ height:"70vh" }}>
-            <Section
-              title="I'm Ajay, working as a React Native Developer. 
+        <Item key={1} sx={{ height: "70vh" }}>
+          <Section
+            title="I'm Ajay, working as a React Native Developer. 
         I love to work on products whose impact makes life easier"
-              backgroundImg="model-s.jpg"
-              leftBtnText="Custom order"
-              rightBtnText="Existing Inventory"
-            />
-          </Item>
+            backgroundImg="model-s.jpg"
+            leftBtnText="Custom order"
+            rightBtnText="Existing Inventory"
+          />
+        </Item>
         {/* ))} */}
       </Masonry>
     </Box>
