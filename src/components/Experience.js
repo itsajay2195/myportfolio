@@ -1,5 +1,7 @@
 import React from "react";
 import { Timeline, TimelineItem } from "vertical-timeline-component-for-react";
+import styled from "styled-components";
+
 
 const App = () => {
   const timelineData = [
@@ -53,7 +55,7 @@ const App = () => {
             
           >
             <h3 style={{ color: "white" }}>{timeline.title}</h3>
-            <h4 style={{ color: "#61b8ff" }}>{timeline.designation}</h4>
+            <Name>{timeline.designation}</Name>
           </TimelineItem>
           ))
         }
@@ -66,3 +68,20 @@ const App = () => {
 };
 
 export default App;
+
+const Name = styled.span`
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  flex-wrap: nowrap;
+  background-image: linear-gradient(
+    to right,
+    #6371c7,
+    #5563c1,
+    #4656bb,
+    #3848b5,
+    #2a3bae
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
