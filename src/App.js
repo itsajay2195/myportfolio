@@ -100,6 +100,7 @@ import Masonry from "@mui/lab/Masonry";
 import Section from "./components/Sections";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience"
+import HireMeButton from "./components/HireMeBtn";
 
 const heights = ["50vh", "40vh","60vh"];
 
@@ -136,6 +137,7 @@ export default function BasicMasonry() {
           "linear-gradient(to right, #6371c7, #5563c1, #4656bb, #3848b5, #2a3bae)",
       }}
     >
+      <HireMeButton />
       <Masonry columns={2} spacing={0}>
         {heights.map((height, index) => (
           <Item key={1} sx={{ height: height }}>

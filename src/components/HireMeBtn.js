@@ -15,9 +15,9 @@ const FloatingButton = styled.button`
   border-radius: 50%;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   cursor: pointer;
-  font-size: 1.5rem;
-  width: 100px;
-  height: 100px;
+  font-size: 1.2rem;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
