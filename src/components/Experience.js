@@ -29,27 +29,6 @@ const App = () => {
         >
           <h3>Title, Company</h3>
           <h4>Subtitle</h4>
-          <p>
-            Est incididunt sint eu minim dolore mollit velit velit commodo ex
-            nulla exercitation. Veniam velit adipisicing anim excepteur nostrud
-            magna nostrud aliqua dolor. Sunt aute est duis ut nulla officia
-            irure reprehenderit laborum fugiat dolore in elit. Adipisicing do
-            qui duis Lorem est.
-          </p>
-          <p>
-            Est incididunt sint eu minim dolore mollit velit velit commodo ex
-            nulla exercitation. Veniam velit adipisicing anim excepteur nostrud
-            magna nostrud aliqua dolor. Sunt aute est duis ut nulla officia
-            irure reprehenderit laborum fugiat dolore in elit. Adipisicing do
-            qui duis Lorem est.
-          </p>
-          <p>
-            Est incididunt sint eu minim dolore mollit velit velit commodo ex
-            nulla exercitation. Veniam velit adipisicing anim excepteur nostrud
-            magna nostrud aliqua dolor. Sunt aute est duis ut nulla officia
-            irure reprehenderit laborum fugiat dolore in elit. Adipisicing do
-            qui duis Lorem est.
-          </p>
         </TimelineItem>
         <TimelineItem
           key="002"
@@ -64,20 +43,6 @@ const App = () => {
         >
           <h3 style={{ color: "#61b8ff" }}>Title, Company</h3>
           <h4 style={{ color: "#61b8ff" }}>Subtitle</h4>
-          <p>
-            Est incididunt sint eu minim dolore mollit velit velit commodo ex
-            nulla exercitation. Veniam velit adipisicing anim excepteur nostrud
-            magna nostrud aliqua dolor. Sunt aute est duis ut nulla officia
-            irure reprehenderit laborum fugiat dolore in elit. Adipisicing do
-            qui duis Lorem est.
-          </p>
-          <p>
-            Est incididunt sint eu minim dolore mollit velit velit commodo ex
-            nulla exercitation. Veniam velit adipisicing anim excepteur nostrud
-            magna nostrud aliqua dolor. Sunt aute est duis ut nulla officia
-            irure reprehenderit laborum fugiat dolore in elit. Adipisicing do
-            qui duis Lorem est.
-          </p>
         </TimelineItem>
         <TimelineItem
           key="003"
@@ -97,27 +62,6 @@ const App = () => {
         >
           <h3>Title, Company</h3>
           <h4>Subtitle</h4>
-          <p>
-            Est incididunt sint eu minim dolore mollit velit velit commodo ex
-            nulla exercitation. Veniam velit adipisicing anim excepteur nostrud
-            magna nostrud aliqua dolor. Sunt aute est duis ut nulla officia
-            irure reprehenderit laborum fugiat dolore in elit. Adipisicing do
-            qui duis Lorem est.
-          </p>
-          <p>
-            Est incididunt sint eu minim dolore mollit velit velit commodo ex
-            nulla exercitation. Veniam velit adipisicing anim excepteur nostrud
-            magna nostrud aliqua dolor. Sunt aute est duis ut nulla officia
-            irure reprehenderit laborum fugiat dolore in elit. Adipisicing do
-            qui duis Lorem est.
-          </p>
-          <p>
-            Est incididunt sint eu minim dolore mollit velit velit commodo ex
-            nulla exercitation. Veniam velit adipisicing anim excepteur nostrud
-            magna nostrud aliqua dolor. Sunt aute est duis ut nulla officia
-            irure reprehenderit laborum fugiat dolore in elit. Adipisicing do
-            qui duis Lorem est.
-          </p>
         </TimelineItem>
         <TimelineItem
           key="004"
@@ -126,20 +70,6 @@ const App = () => {
         >
           <h3>Title, Company</h3>
           <h4>Subtitle</h4>
-          <p>
-            Est incididunt sint eu minim dolore mollit velit velit commodo ex
-            nulla exercitation. Veniam velit adipisicing anim excepteur nostrud
-            magna nostrud aliqua dolor. Sunt aute est duis ut nulla officia
-            irure reprehenderit laborum fugiat dolore in elit. Adipisicing do
-            qui duis Lorem est.
-          </p>
-          <p>
-            Est incididunt sint eu minim dolore mollit velit velit commodo ex
-            nulla exercitation. Veniam velit adipisicing anim excepteur nostrud
-            magna nostrud aliqua dolor. Sunt aute est duis ut nulla officia
-            irure reprehenderit laborum fugiat dolore in elit. Adipisicing do
-            qui duis Lorem est.
-          </p>
         </TimelineItem>
       </Timeline>
     </div>
