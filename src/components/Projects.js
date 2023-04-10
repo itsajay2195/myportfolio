@@ -72,13 +72,13 @@ const Projects = ({ projectsRef }) => {
               <PlaystoreLink>
                 <LinkText>
                   Link to playstore
-                  <ExternalLink src={"images/arrow.png"} alt={"external"} />
+                  <ExternalLink src={"images/external-link.png"} alt={"external"} />
                 </LinkText>
               </PlaystoreLink>
               <AppstoreLink>
                 <LinkText>
                   Link to Appstore{" "}
-                  <ExternalLink src={"images/arrow.png"} alt={"external"} />
+                  <ExternalLink src={"images/external-link.png"} alt={"external"} />
                 </LinkText>
               </AppstoreLink>
             </Hover>
@@ -86,7 +86,7 @@ const Projects = ({ projectsRef }) => {
         </Content>
         <Arrow
           onClick={handleRightArrowClick}
-          src={"images/external-link.png"}
+          src={"images/arrow.png"}
           alt={"right-arrow"}
         />
       </div>
