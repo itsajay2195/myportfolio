@@ -155,7 +155,6 @@ const Container = styled.div`
 
 const Content = styled.div`
   display: flex;
-  height:50%;
   width: 50%;
 `;
 
@@ -180,8 +179,8 @@ const IconWrapper = styled.div`
 `;
 
 const MyImg = styled.img`
-  height: 40%;
-  width: 100%;
+  height: 250px;
+  width: 350px;
   border-radius: 15px;
 `;
 
