@@ -15,7 +15,7 @@ const socialIcons = [
   { icon: faInstagram, link: "https://www.instagram.com/ajaycnv/?hl=en" },
 ];
 
-function Section(props) {
+function Section({dateTime,greeting}) {
   const handleResumeClick = () => {
     window.open(
       "https://drive.google.com/file/d/1FESKJoJUEkKpc1WgL1SoKqSh_AgQQ9Gj/view?usp=sharing")
@@ -34,6 +34,11 @@ function Section(props) {
         <MyImg src={"images/Ajay.jpeg"} alt="My Image" />
       </div>
 
+      <div style={{padding:10, position:"absolute", display:"flex", flexDirection:"column"}}>
+          <Name style={{ color:"white",fontSize: "14px" }}>{dateTime.date}</Name>
+          <Name style={{ color:"white",fontSize: "14px" }}>{dateTime.time}</Name>
+      </div>
+
       <div style={{ display: "flex", height: "50%", alignItems: "center" }}>
         <Left>
           <div
@@ -43,12 +48,11 @@ function Section(props) {
             }}
           >
             <Text>
-              Hey! I Am <Name>Ajaykumar Rajasekaran</Name>
+              Hello, <Name>{greeting}! </Name>My name is <Name>Ajaykumar Rajasekaran.</Name>
             </Text>
 
             <span style={{ color: "white" }}>
-              Impacing human lives through 
-              developing the mobile applications using{" "}
+            I am impacting human lives by developing mobile applications using React Native.{" "}
               <Name style={{ fontSize: "14px" }}> React Native.</Name>
             </span>
           </div>
