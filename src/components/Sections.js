@@ -7,6 +7,7 @@ import {
   faLinkedin,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 const socialIcons = [
   { icon: faGithub, link: "https://github.com/itsajay2195" },
@@ -15,7 +16,10 @@ const socialIcons = [
 ];
 
 function Section(props) {
-  const textRef = useRef();
+  const handleResumeClick = () => {
+    window.open(
+      "https://drive.google.com/file/d/1FESKJoJUEkKpc1WgL1SoKqSh_AgQQ9Gj/view?usp=sharing")
+  };
 
   return (
     <Wrap className="Home">
@@ -44,7 +48,8 @@ function Section(props) {
 
             <span style={{ color: "white" }}>
               An India based Software developer passionate and experienced in
-              developing mobile applications using <Name style={{ fontSize: "14px" }}> React Native.</Name>
+              developing mobile applications using{" "}
+              <Name style={{ fontSize: "14px" }}> React Native.</Name>
             </span>
           </div>
         </Left>
@@ -79,12 +84,46 @@ function Section(props) {
             </a>
           ))}
         </div>
+
+        <Resume onClick={handleResumeClick}>
+          <FontAwesomeIcon
+            icon={faDownload}
+            size="2x"
+            style={{ paddingRight: 0 }}
+          />
+          <ResumeHover>View and download my resume</ResumeHover>
+        </Resume>
       </div>
     </Wrap>
   );
 }
 
 export default Section;
+
+const ResumeHover = styled.div`
+  display: none;
+  position: absolute;
+  padding:10px;
+  background-color: #212121;
+  color: white;
+  bottom:100px;
+  border-radius:10px;
+`;
+
+const Resume = styled.div`
+  display: flex;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+  right: 49%;
+  top: 45%;
+  justify-content: center;
+  alignt-items: center;
+  &:hover ${ResumeHover} {
+    display: block;
+  }
+`;
 
 const Wrap = styled.div`
   display: flex;

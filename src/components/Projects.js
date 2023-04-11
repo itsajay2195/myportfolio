@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { mobileProtfolio } from "../constants/data";
 import Slide from "react-reveal/Slide";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Projects = ({ projectsRef }) => {
   const [index, setIndex] = useState(0);
@@ -108,11 +106,11 @@ const Projects = ({ projectsRef }) => {
 export default Projects;
 
 const Arrow = styled.img`
-  height: 80px;
-  width: 80px;
+  height: 50px;
+  width: 50px;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50px;
+  border-radius: 25px;
   transform: ${(props) => (props.direction === "left" ? "scaleX(-1)" : "none")};
 `;
 

@@ -16,10 +16,7 @@
 //     setActiveSection(name);
 //   };
 
-//   const handleResumeClick = () => {
-//     window.open(
-//       "https://drive.google.com/file/d/1FESKJoJUEkKpc1WgL1SoKqSh_AgQQ9Gj/view?usp=sharing")
-//   };
+
 
 //   const homeRef = useRef(null);
 //   const skillsRef = useRef(null);
@@ -102,6 +99,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience"
 import HireMeButton from "./components/HireMeBtn";
 import Projects from "./components/Projects"
+import Contact from "./components/Contact";
 
 const heights = ["50vh", "40vh","60vh","50vh"];
 
@@ -140,6 +138,7 @@ export default function BasicMasonry() {
           "linear-gradient(to right, #6371c7, #5563c1, #4656bb, #3848b5, #2a3bae)",
       }}
     >
+      {/* <Contact/> */}
       <HireMeButton />
       <Masonry columns={2} spacing={0.35}>
         {heights.map((height, index) => (

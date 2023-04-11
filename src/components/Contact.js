@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 
-const Contact = ({ contactRef }) => {
+const Contact = ({ contactRef, closeModal }) => {
   const [message, setMessage] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -10,7 +12,18 @@ const Contact = ({ contactRef }) => {
 
   return (
     <Container id="contact" ref={contactRef}>
+  <div style={{display:"flex", position:"absolute",width:"100%",flexDirection:"row", justifyContent:"flex-end",paddingRight:40, height:50, alignItems:"center"}}>
+        <Close onClick={closeModal}>
+        <FontAwesomeIcon
+                icon={faClose}
+                size="2x"
+                style={{ paddingRight: 30 }}
+              />
+        </Close>
+        
+        </div>
       <Content>
+     
         <Left>
           <img src="images/shake.svg" alt="" />
         </Left>
@@ -36,6 +49,17 @@ const Contact = ({ contactRef }) => {
 };
 
 export default Contact;
+
+const Close = styled.div`
+  display:flex;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  align-self:center;
+`;
+
 
 const Container = styled.div`
   height: 95vh;
