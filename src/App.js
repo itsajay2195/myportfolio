@@ -41,26 +41,21 @@ export default function BasicMasonry() {
   const [dateTime, setDateTime] = React.useState("");
   const [greeting, setGreeting] = React.useState('');
 
-  const getCurrentDateTime = (offset) => {
-    const date = new Date();
-    const utcTimestamp = date.getTime() + date.getTimezoneOffset() * 60000;
-    const currentTimestamp = utcTimestamp + offset * 60 * 1000;
-
-    const dateOptions = { month: "short", day: "numeric", year: "numeric" };
-    const timeOptions = { hour: "numeric", minute: "numeric" };
-
-    const formattedDate = new Date(currentTimestamp).toLocaleDateString(
-      "en-US",
-      dateOptions
-    );
-    const formattedTime = new Date(currentTimestamp).toLocaleTimeString(
-      "en-US",
-      timeOptions
-    );
+  const getCurrentDateTime = () => {
+    const currentDate = new Date().toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    });
+    
+    const currentTime = new Date().toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: '2-digit'
+    });
 
     return {
-      date: formattedDate,
-      time: formattedTime,
+      date: currentDate,
+      time: currentTime,
     };
   };
 
