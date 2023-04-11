@@ -39,26 +39,7 @@ export const mobileProtfolio = [
   },
 ];
 
-export const featuredProtfolio = [
-  {
-    id: 1,
-    title: "HappyFox Helpdesk",
-    src: "images/happyfox.jpeg",
-    gif: "gifs/hf-gif.gif",
-  },
-  {
-    id: 2,
-    title: "Uber-Eats clone",
-    src: "uber-eats/ub1.png",
-    gif: "gifs/ub-gif.gif",
-  },
-  {
-    id: 3,
-    title: "News Feed",
-    src: "feed/feed1.png",
-    gif: "gifs/feed-gif.gif",
-  },
-];
+
 
 export const webAppProtfolio = [];
 
