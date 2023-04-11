@@ -47,8 +47,8 @@ function Section(props) {
             </Text>
 
             <span style={{ color: "white" }}>
-              An India based Software developer passionate and experienced in
-              developing mobile applications using{" "}
+              Impacing human lives through 
+              developing the mobile applications using{" "}
               <Name style={{ fontSize: "14px" }}> React Native.</Name>
             </span>
           </div>
