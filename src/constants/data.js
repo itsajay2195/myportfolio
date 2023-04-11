@@ -28,14 +28,21 @@ export const mobileProtfolio = [
     title: "My Expense Management App",
     src: "images/aspireapp.png",
     gif: "gifs/ub-gif.gif",
-    exlink: "https://www.linkedin.com/safety/go?url=https%3A%2F%2Fexpo.dev%2F%40ajaycnv%2FaspireFintech&trk=flagship-messaging-web&messageThreadUrn=urn%3Ali%3AmessagingThread%3A2-ZDMxNmZjMDMtNzgwYy00ZTVjLTgyY2YtY2RkMTI5NWFmNTQzXzAxMA%3D%3D&lipi=urn%3Ali%3Apage%3Ad_flagship3_notifications%3BT6VAX7v3TvuwKlEz0BW7Fw%3D%3D"
+    exlink: "https://expo.dev/@ajaycnv/aspireFintech"
   },
   {
     id: 5,
+    title: "Uber clone",
+    src: "uber-eats/ub1.png",
+    gif: "gifs/ub-gif.gif",
+    exlink: "https://expo.dev/@ajaycnv/ub-clone"
+  },
+  {
+    id: 6,
     title: "Uber-Eats clone",
     src: "uber-eats/ub1.png",
     gif: "gifs/ub-gif.gif",
-    exlink: "https://www.linkedin.com/safety/go?url=https%3A%2F%2Fexpo.dev%2F%40ajaycnv%2Fmy-uber-eats-clone%3FserviceType%3Dclassic%26distribution%3Dexpo-go&trk=flagship-messaging-web&messageThreadUrn=urn%3Ali%3AmessagingThread%3A2-ZDMxNmZjMDMtNzgwYy00ZTVjLTgyY2YtY2RkMTI5NWFmNTQzXzAxMA%3D%3D&lipi=urn%3Ali%3Apage%3Ad_flagship3_notifications%3BT6VAX7v3TvuwKlEz0BW7Fw%3D%3D"
+    exlink: "https://expo.dev/@ajaycnv/my-uber-eats-clone?serviceType=classic&distribution=expo-go"
   },
 ];
 
