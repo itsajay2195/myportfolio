@@ -52,7 +52,7 @@ function Section({dateTime,greeting}) {
             </Text>
 
             <span style={{ color: "white" }}>
-            I am impacting human lives by developing mobile applications using React Native.{" "}
+            I am impacting human lives by developing mobile applications using{" "}
               <Name style={{ fontSize: "14px" }}> React Native.</Name>
             </span>
           </div>
