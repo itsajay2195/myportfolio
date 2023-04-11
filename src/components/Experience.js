@@ -22,7 +22,7 @@ const App = () => {
     {
       date: "07/2019 – 03/2022",
       location: "Chennai, Tamil Nadu,India.",
-      title: "Happyfox",
+      title: "Happyfox Technologies LLP",
       designation: "React Native Engineer",
       content:
         "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
