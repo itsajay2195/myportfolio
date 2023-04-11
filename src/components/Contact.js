@@ -10,20 +10,34 @@ const Contact = ({ contactRef, closeModal }) => {
     setMessage(true);
   };
 
+  const handleBlockTimeClick = () => {
+    window.open(
+      "https://cal.com/ajayrne"
+    );
+  };
   return (
     <Container id="contact" ref={contactRef}>
-  <div style={{display:"flex", position:"absolute",width:"100%",flexDirection:"row", justifyContent:"flex-end",paddingRight:40, height:50, alignItems:"center"}}>
+      <div
+        style={{
+          display: "flex",
+          position: "absolute",
+          width: "100%",
+          flexDirection: "row",
+          justifyContent: "flex-end",
+          paddingRight: 40,
+          height: 50,
+          alignItems: "center",
+        }}
+      >
         <Close onClick={closeModal}>
-        <FontAwesomeIcon
-                icon={faClose}
-                size="2x"
-                style={{ paddingRight: 30 }}
-              />
+          <FontAwesomeIcon
+            icon={faClose}
+            size="2x"
+            style={{ paddingRight: 30 }}
+          />
         </Close>
-        
-        </div>
+      </div>
       <Content>
-     
         <Left>
           <img src="images/shake.svg" alt="" />
         </Left>
@@ -31,11 +45,14 @@ const Contact = ({ contactRef, closeModal }) => {
           <form action="https://formspree.io/f/moqzkoep" method="POST">
             <FormGroup>
               <Label>Email:</Label>
-              <Input  name="email" type="text" placeholder="Enter your email" />
+              <Input name="email" type="text" placeholder="Enter your email" />
             </FormGroup>
             <FormGroup>
               <Label>Message:</Label>
-              <Textarea  name="message" placeholder="Enter your message" />
+              <Textarea name="message" placeholder="Enter your message" />
+            </FormGroup>
+            <FormGroup>
+              <StyledLink onClick={handleBlockTimeClick} href="#">Block Time</StyledLink>
             </FormGroup>
             <Button type="submit">Send</Button>
             {message && (
@@ -51,15 +68,14 @@ const Contact = ({ contactRef, closeModal }) => {
 export default Contact;
 
 const Close = styled.div`
-  display:flex;
+  display: flex;
   height: 50px;
   width: 50px;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 25px;
-  align-self:center;
+  align-self: center;
 `;
-
 
 const Container = styled.div`
   height: 95vh;
@@ -135,5 +151,21 @@ const Button = styled.button`
 
   &:hover {
     background-color: #3e8e41;
+  }
+`;
+
+const StyledLink = styled.a`
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid #333;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+
+  &:hover {
+    background-color: #333;
+    color: #fff;
   }
 `;
