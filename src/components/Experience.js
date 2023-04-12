@@ -28,7 +28,7 @@ const App = () => {
         "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
-      date: "10/2017 – 15/2019",
+      date: "10/2017 – 5/2019",
       location: "Dubai, UAE.",
       designation: "Software Engineer",
       title: "TPConnects Technologies LLP",
